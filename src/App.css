@@ -4,3 +4,12 @@
   padding: 2rem;
   text-align: center;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+}
+a {
+  color: white;
+  cursor: pointer;
+}

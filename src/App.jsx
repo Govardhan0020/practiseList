@@ -1,51 +1,37 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import axios from 'axios';
-
-function App() {
-
-const getData = async() => {
-
-  const res = await   fetch("http://skplfv-5000.csb.app")
-;
-  const data = await res.json();
-  console.log(data, "data")
-
-}
-
-useEffect(() => {
-  fetch("http://skplfv-5000.csb.app/")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then((data) => console.log(data))
-    .catch((error) => console.error("Fetch error:", error));
-}, []);
+import React from 'react'
+import { BrowserRouter, HashRouter, Link, Route, Routes } from 'react-router-dom'
+import Home from './Components/Home'
+import About from './Components/About'
+import Contact from './Components/cpmtact/Contact'
+import "./App.css"
 
 
-useEffect(()  => {
-
-getData();
-
-  // fetch("https://skplfv-5000.csb.app")
-  // .then((res) => res.json())
-  // .then((data) => console.log(data))
-}, [])
-
-// useEffect(() => {
-//   axios.get("https://skplfv-5000.csb.app")
-//     .then(response => console.log(response.data))
-//     .catch(error => console.error("API error:", error));
-// }, []);
-
-
+const App = () => {
   return (
- <>
- <h1> hello All </h1>
- </>
+    <div>
+
+<HashRouter>
+<div  className='navbar'>
+   
+   <Link to="/">  Home   </Link>
+   <Link to="/about">  About    </Link>
+   <Link to="/contact">  Contact    </Link>
+
+</div>
+
+
+
+  <Routes>
+<Route index path="/" element={ <Home/>  }  />
+<Route exact  path="/about" element={ <About/>  }  />
+<Route exact path="/contact" element={ <Contact />  }  />
+
+  </Routes>
+
+</HashRouter>
+
+
+    </div>
   )
 }
 
