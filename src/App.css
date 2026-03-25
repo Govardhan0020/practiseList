@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
+  padding: 0;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -10,6 +10,116 @@
   justify-content: space-evenly;
 }
 a {
-  color: white;
+  color: rgb(228, 216, 216);
   cursor: pointer;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+/* MAIN CONTAINER */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* LEFT SIDE */
+.left {
+  width: 50%;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #080202;
+}
+
+.left h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.left p {
+  font-size: 18px;
+  color: #e4c3c3;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.buttons .outline {
+  background: transparent;
+  border: 1px solid black;
+  color: black;
+}
+
+/* RIGHT SIDE */
+.right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR TOP */
+.navbar {
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding: 0 30px;
+  background: black;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+/* IMAGE AREA */
+.image-container {
+  height: 460px;      /* 👈 fixed size needed */
+  width: 460px;       /* 👈 same as height */
+  position: relative;
+  margin: auto;       /* center it */
+}
+
+/* 🔥 MAKE IMAGE ROUND */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;   /* 👈 THIS MAKES IT CIRCLE */
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TEXT ON IMAGE */
+.overlay-text {
+  position: absolute;
+  bottom: 40px;
+  left: 30px;
+  color: rgb(241, 233, 233);
+}
+

@@ -8,6 +8,8 @@ base : "/practiseList/",
 
   server : {
     port : 3000,
-    host : "localhost"
+    host : "localhost",
+    open : true
+
   }
 })
