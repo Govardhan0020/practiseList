@@ -19,10 +19,14 @@
 
 import { Link } from "react-router-dom";
 import "../App.css";
+import { useTheme } from "../context/Themecontext";
 
 const Home = () => {
+  const { theme, toggleTheme } = useTheme()
+
+
   return (
-    <div className="container">
+    <div className="container `app ${theme}` ">
 
       {/* LEFT SIDE */}
       <div className="left">
@@ -46,6 +50,9 @@ const Home = () => {
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
+          <div>   <button onClick={toggleTheme}>
+        Toggle Theme
+      </button>  </div>
         </div>
 
         {/* IMAGE CONTAINER */}
