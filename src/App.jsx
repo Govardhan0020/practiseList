@@ -41,18 +41,33 @@
 
 
 
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter  , Routes, Route , Link } from "react-router-dom";
 import Home from "./Components/Home";
+import { useTheme } from "./context/Themecontext";
 
 function App() {
+const { toggleTheme } = useTheme()
+
   return (
-    <Router>
+    <div>  
+    <HashRouter>
+      
+        {/* <div className="navbar">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+          <div>   <button onClick={toggleTheme}>
+        Toggle Theme
+      </button>  </div>
+        </div> */}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<h1 className="text-center mt-10">About Page</h1>} />
         <Route path="/contact" element={<h1 className="text-center mt-10">Contact Page</h1>} />
       </Routes>
-    </Router>
+    </HashRouter>
+    </div>
   );
 }
 
